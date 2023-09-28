@@ -2,6 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const router = express.Router();
+// const myTestMiddleWare = require("./utils/myTestMiddleWare");
+
+// 自写中间件
+// app.use(myTestMiddleWare);
 
 // 第三方中间件，解析post请求数据
 app.use(bodyParser.json());
