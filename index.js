@@ -50,8 +50,8 @@ app.post("/login", (req, res) => {
   res.send("登录成功！");
 });
 
-// 局部中间件使用
-app.get("/test", middlewareTest, (req, res) => {
+// 局部中间件使用(多个用数组的形式传递)
+app.get("/test", [middlewareTest], (req, res) => {
   const method = req.method;
   res.send("测试成功！");
 });
@@ -63,6 +63,9 @@ app.use("/errorTest", (req, res, next) => {
 });
 
 // 使用捕获错误中间件
+/**
+ * @description 错误级别中间件应该放在最后注册
+ */
 app.use(catchErrMiddleWare);
 
 app.listen(5050, () => {
