@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端测试</title>
+</head>
+<body>
+  <button id="corsBtn">cors-btn</button>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    document.getElementById('corsBtn').onclick = () => {
+      axios.get('http://localhost:5050/api/test').then(res => {
+        console.log('cors-test:', res.data)
+      })
+    }
+  </script>
+</body>
+</html>
